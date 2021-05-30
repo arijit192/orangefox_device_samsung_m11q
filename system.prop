@@ -1,0 +1,4 @@
+ro.boot.dynamic_partitions=true
+ro.product.board=QC_Reference_Phone
+ro.board.platform=msm8953
+ro.adb.secure=1
