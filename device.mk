@@ -22,7 +22,7 @@ LOCAL_PATH := device/samsung/m11q
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # use twrp-common for decryption
-#BOARD_USES_QCOM_FBE_DECRYPTION := true
+BOARD_USES_QCOM_FBE_DECRYPTION := true
 
 PRODUCT_PACKAGES += \
     qcom_decrypt \

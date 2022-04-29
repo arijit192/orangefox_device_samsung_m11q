@@ -16,17 +16,20 @@
 # limitations under the License.
 #
 
-export TW_DEFAULT_LANGUAGE="en"
-export LC_ALL="C"
-export ALLOW_MISSING_DEPENDENCIES=true
-export FOX_RECOVERY_SYSTEM_PARTITION="/dev/block/mapper/system"
-export FOX_RECOVERY_VENDOR_PARTITION="/dev/block/mapper/vendor"
-export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
-export OF_NO_TREBLE_COMPATIBILITY_CHECK=1
-export OF_DISABLE_MIUI_SPECIFIC_FEATURES=1
-export OF_NO_MIUI_PATCH_WARNING=1
-export OF_USE_MAGISKBOOT=1
-export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES=1
+# Inherit from those products. Most specific first.
+$(call inherit-product-if-exists, $(SRC_TARGET_DIR)/product/embedded.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
-#add_lunch_combo omni_m11q-userdebug
-#add_lunch_combo omni_m11q-eng
+# Inherit from m11q device
+$(call inherit-product, device/samsung/m11q/device.mk)
+# Inherit some common Omni stuff.
+$(call inherit-product, vendor/twrp/config/common.mk)
+
+# Device identifier. This must come after all inclusions
+PRODUCT_DEVICE := m11q
+PRODUCT_NAME := twrp_m11q
+PRODUCT_BRAND := samsung
+PRODUCT_MODEL := samsung
+PRODUCT_MANUFACTURER := samsung
+PRODUCT_RELEASE_NAME := Samsung M11
