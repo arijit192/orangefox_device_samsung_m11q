@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote fetch="https://github.com" name="github" />
+  <project name="arijit192/orangefox_device_samsung_m11q" path="device/samsung/m11q" remote="github" revision="twrp" />
+  <project path="device/qcom/twrp-common" remote="TeamWin" name="android_device_qcom_twrp-common" revision="android-12.1" />
+</manifest>
